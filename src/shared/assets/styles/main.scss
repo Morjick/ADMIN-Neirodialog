@@ -1,7 +1,17 @@
 @import url('./reset.scss');
+@import "themes/dark-theme";
+@import "themes/light-theme";
 
-:root {
-  --font-color: #202020;
-  
-  --background-color: #d1d1d1;
+.root {
+  background: var(--primary-background-color);
+  color: var(--font-color);
+  min-height: 100vh;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: 800;
 }

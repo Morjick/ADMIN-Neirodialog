@@ -1,13 +1,13 @@
 {
-  "name": "junior-job",
+  "name": "neirodialog-admin",
   "version": "1.0.0",
-  "description": "junior job",
+  "description": "neirodialog admin",
   "main": "index.js",
   "scripts": {
     "build": "webpack --env mode=production",
-    "dev": "webpack serve --env port=3000 mode=development",
-    "start": "webpack serve --env port=3000 mode=production",
-    "prod": "webpack --env port=3000 mode=production",
+    "dev": "webpack serve --env port=4040 mode=development",
+    "start": "webpack serve --env port=4040 mode=production",
+    "prod": "webpack --env port=4040 mode=production",
     "unit": "jest --config ./config/jest/jest.config.ts",
     "lint": "npx eslint \"**/*.{ts,tsx,vue}\"",
     "lint:fix": "npx eslint --fix \"**/*.{ts,tsx,vue}\"",
@@ -69,6 +69,9 @@
     "vue": "^3.2.45",
     "vue-axios": "^3.5.2",
     "vue-router": "^4.1.6",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "@ckeditor/ckeditor5-build-classic": "^36.0.1",
+    "@ckeditor/ckeditor5-upload": "^36.0.1",
+    "@ckeditor/ckeditor5-vue": "^4.0.1"
   }
 }

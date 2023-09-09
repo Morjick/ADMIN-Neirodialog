@@ -3,6 +3,7 @@ import { createApp, h } from 'vue'
 import App from './App.vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import CKEditor from '@ckeditor/ckeditor5-vue'
 import 'shared/assets/styles/main.scss'
 
 const app = createApp({
@@ -22,19 +23,20 @@ function createErrorHandler (): any {
 
 createErrorHandler()
 
-axios.defaults.baseURL = 'http://localhost:8080/api/'
+axios.defaults.baseURL = 'http://localhost:8080/'
 axios.interceptors.response.use(
-  (res: any) => res,
+  (res: any) => res.data,
   async (err: any) => {
     try {
       if (err.status >= 500 && err.status <= 600) {
         void router.push('/server-error')
-      } else if (err.status >= 305 && err.status <= 401) {
+      } else if (err.status >= 305 && err.status <= 400) {
         void router.push('')
-      } else if (err.status === 404) {
+      } else if (err.status === 401 || err.status === 404) {
+        await store.dispatch('logout')
         void router.push('/auth')
       } else {
-        return err
+        return err.response
       }
     } catch (error: any) {
       void router.push('/server-error')
@@ -46,5 +48,6 @@ axios.interceptors.response.use(
 app.use(router)
 app.use(store)
 app.use(VueAxios, axios)
+app.use(CKEditor)
 
 app.mount('#app')

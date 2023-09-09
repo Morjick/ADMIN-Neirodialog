@@ -27,7 +27,29 @@ export default defineComponent({
   data () {
     return {}
   },
-  methods: {},
-  mounted () {},
+  methods: {
+    async login () {
+      const token = localStorage.getItem('neirodialog-token')
+
+      if (!token) return false
+
+      this.axios.defaults.headers.common.Authorization = `Bearer ${token}`
+
+      const data: any = await this.axios.post('user/check-token', { token, })
+
+      if (data.user.role !== 'ADMIN' && data.user.role !== 'ROOT') {
+        // eslint-disable-next-line no-console
+        console.warn('Не достаточно прав')
+        return false
+      }
+
+      data.token = token
+
+      this.$store.dispatch('login', data)
+    },
+  },
+  mounted () {
+    this.login()
+  },
 })
 </script>
