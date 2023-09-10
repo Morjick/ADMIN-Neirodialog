@@ -23,7 +23,7 @@ function createErrorHandler (): any {
 
 createErrorHandler()
 
-axios.defaults.baseURL = 'http://185.189.167.11:8080/'
+axios.defaults.baseURL = 'http://neirodialog.ru/api/'
 axios.interceptors.response.use(
   (res: any) => res.data,
   async (err: any) => {
