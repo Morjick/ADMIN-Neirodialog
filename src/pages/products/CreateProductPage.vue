@@ -82,7 +82,7 @@ export default defineComponent({
         })
 
         if (data.ok) {
-          this.$router.push('/products')
+          this.$router.push('/admin/products')
         }
       } catch {}
     },

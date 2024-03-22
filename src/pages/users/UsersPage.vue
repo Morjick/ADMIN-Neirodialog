@@ -120,7 +120,7 @@ export default defineComponent({
   methods: {
     async getUser () {
       if (!this.$route.params.id) {
-        this.$router.push('/')
+        this.$router.push('/admin')
       }
 
       const data: any = await this.axios.get(`user/get-user/${this.$route.params.id}`)

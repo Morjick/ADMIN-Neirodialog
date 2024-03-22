@@ -76,14 +76,14 @@ export default defineComponent({
           this.axios.defaults.headers.common.Authorization = `Bearer ${data.token}`
           this.$store.dispatch('login', data.user)
 
-          this.$router.push('/')
+          this.$router.push('/admin')
         }
 
         if (!data?.data?.ok) {
           this.errorMessage = data.data.message
         }
 
-        this.$router.push('/')
+        this.$router.push('/admin')
       } catch (e: any) {
         const message = Array.isArray(e.response.data.message)
           ? e.response.data.message[0]

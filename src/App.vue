@@ -46,6 +46,7 @@ export default defineComponent({
       data.token = token
 
       this.$store.dispatch('login', data)
+      this.$router.push('/admin')
     },
   },
   mounted () {

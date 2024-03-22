@@ -58,7 +58,7 @@ export default defineComponent({
     },
     addProduct () {
       this.addProductButtonLoading = true
-      this.$router.push('/products-create')
+      this.$router.push('/admin/products-create')
     },
   },
   mounted () {

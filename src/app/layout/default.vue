@@ -39,27 +39,27 @@ export default {
       {
         id: 1,
         title: 'Главная',
-        path: '/',
+        path: '/admin',
       },
       {
         id: 2,
         title: 'Статьи',
-        path: '/articles',
+        path: '/admin/articles',
       },
       {
         id: 3,
         title: 'Продукты',
-        path: '/products',
+        path: '/admin/products',
       },
       {
         id: 4,
         title: 'Заказы',
-        path: '/orders',
+        path: '/admin/orders',
       },
       {
         id: 5,
         title: 'Пользователи',
-        path: '/users-list',
+        path: '/admin/users-list',
       },
     ],
   }),

@@ -24,7 +24,7 @@ export default defineComponent({
       const data: any = await this.axios.post('articles/create', article)
 
       if (data.ok) {
-        this.$router.push('/articles')
+        this.$router.push('/admin/articles')
       }
     },
   },

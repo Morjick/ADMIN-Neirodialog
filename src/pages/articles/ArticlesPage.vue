@@ -54,10 +54,10 @@ export default defineComponent({
       this.pageIsLoad = true
     },
     pushToCreate () {
-      this.$router.push('articles/create')
+      this.$router.push('/admin/articles/create')
     },
     updateArticle (item: ArticleI) {
-      this.$router.push(`/articles/update/${item.href}`)
+      this.$router.push(`/admin/articles/update/${item.href}`)
     },
   },
   mounted () {

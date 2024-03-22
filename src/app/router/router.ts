@@ -18,23 +18,32 @@ export const router = createRouter({
   routes: [
     {
       component: DefaultLayout,
-      path: '/',
+      path: '/admin',
       children: [
         { component: HomePage, path: '/', name: 'Home', },
-        { component: ProductPage, path: '/products', name: 'Products', },
-        { component: CreateProductPage, path: '/products-create', name: 'ProductsCreate', },
-        { component: UpdateProductPage, path: '/products-update/:href', name: 'ProductsUpdate', },
-        { component: OrderPage, path: '/orders', name: 'Order', },
-        { component: UsersPage, path: '/users/:id', name: 'User', },
-        { component: UserList, path: '/users-list', name: 'UserList', },
-        { component: ArticlesPage, path: '/articles', name: 'Articles', },
-        { component: CreateArticlePage, path: '/articles/create', name: 'ArticleCreate', },
-        { component: UpdateArticlePage, path: '/articles/update/:href', name: 'ArticleUpdate', },
+        { component: ProductPage, path: '/admin/products', name: 'Products', },
+        { component: CreateProductPage, path: '/admin/products-create', name: 'ProductsCreate', },
+        {
+          component: UpdateProductPage,
+          path: '/admin/products-update/:href',
+          name: 'ProductsUpdate',
+        },
+        { component: OrderPage, path: '/admin/orders', name: 'Order', },
+        { component: UsersPage, path: '/admin/users/:id', name: 'User', },
+        { component: UserList, path: '/admin/users-list', name: 'UserList', },
+        { component: ArticlesPage, path: '/admin/articles', name: 'Articles', },
+        { component: CreateArticlePage, path: '/admin/articles/create', name: 'ArticleCreate', },
+        {
+          component:
+          UpdateArticlePage,
+          path: '/admin/articles/update/:href',
+          name: 'ArticleUpdate',
+        },
       ],
     },
     {
       component: AuthLayout,
-      path: '/auth',
+      path: '/admin/auth',
       children: [
         { component: AuthPage, path: 'sign-in', name: 'SignIn', },
       ],
